@@ -109,6 +109,15 @@ def new_post():
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
+@app.context_processor
+def inject_owner_profile():
+    owner_profile = {
+        'avatar': 'static/uploads/owner_avatar.jpg',
+        'name': 'Siga Saint',
+        'bio': 'Hello There 👋'
+    }
+    return dict(owner_profile=owner_profile)
+
 # Run the app
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
