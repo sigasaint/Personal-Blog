@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-4">
+    <h1>{{ post.title }}</h1>
+    <p><small>Posted on {{ post.date_posted }}</small></p>
+    <hr>
+    <div class="post-content">
+        <p>{{ post.content }}</p>
+    </div>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+</div>
+{% endblock %}
